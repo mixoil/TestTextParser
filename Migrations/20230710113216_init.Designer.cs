@@ -11,7 +11,7 @@ using TestTextParser.Data;
 namespace TestTextParser.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    [Migration("20230710103436_init")]
+    [Migration("20230710113216_init")]
     partial class init
     {
         /// <inheritdoc />
@@ -26,20 +26,13 @@ namespace TestTextParser.Migrations
 
             modelBuilder.Entity("TestTextParser.Data.Word", b =>
                 {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+                    b.Property<string>("Value")
+                        .HasColumnType("nvarchar(450)");
 
                     b.Property<int>("Occasions")
                         .HasColumnType("int");
 
-                    b.Property<string>("Value")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.HasKey("Id");
+                    b.HasKey("Value");
 
                     b.ToTable("Words");
                 });

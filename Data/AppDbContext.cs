@@ -15,8 +15,7 @@ namespace TestTextParser.Data
 
         public AppDbContext() : base()
         {
-            if(UsedPostgres)
-                Database.EnsureCreated();
+            Database.EnsureCreated();
         }
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
