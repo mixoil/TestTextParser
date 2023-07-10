@@ -8,7 +8,7 @@ namespace TestTextParser.Data
 {
     public class Word
     {
-        public Guid Id { get; set; }
+        public int Id { get; set; }
         public string Value { get; set; }
         public int Occasions { get; set; }
     }
